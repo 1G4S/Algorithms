@@ -13,13 +13,13 @@ Here are some implemented algorithms by myself in Java ☕
 
 The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. Mathematically, it can be expressed as:
 `F(n) = F(n-1) + F(n-2)`
-with initial conditions `F(0) = 0` and `F(1) = 1`.
+with initial conditions `F(0) = 0` and `F(1) = 1`. The problem can be solve [iteratively](https://github.com/1G4S/Algorithms/blob/3a090b95378aeeef547994ae763c26f8ea7a47db/src/main/java/com/app/algorithms/numberAlgorithms/NumberAlgorithms.java#L4) and [recursively](https://github.com/1G4S/Algorithms/blob/3a090b95378aeeef547994ae763c26f8ea7a47db/src/main/java/com/app/algorithms/numberAlgorithms/NumberAlgorithms.java#L19).
 
 ## Sieve of Eratosthenes 🔢
 
 The Sieve of Eratosthenes is an efficient algorithm for finding all prime numbers up to a specified integer. It works by iteratively marking the multiples of each prime number starting from 2, excluding the prime number itself. The unmarked numbers that remain are primes.
 
-## Checking if the Word is a Palindrome 🔠
+## [Checking if the Word is a Palindrome 🔠](https://github.com/1G4S/Algorithms/blob/3a090b95378aeeef547994ae763c26f8ea7a47db/src/main/java/com/app/algorithms/stringAlgorithms/StringAlgorithms.java#L17)
 
 A palindrome is a word, phrase, number, or other sequences of characters that reads the same forward and backward (ignoring spaces, punctuation, and capitalization). The check involves comparing characters from the beginning and the end of the string, moving towards the center.
 
