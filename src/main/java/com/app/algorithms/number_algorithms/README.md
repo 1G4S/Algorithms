@@ -1,4 +1,4 @@
-# Number Algorithm Descriptions
+# Number Algorithms Descriptions
 
 ## Fibonacci Sequence
 
