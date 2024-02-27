@@ -1,4 +1,4 @@
-# Algorithm Descriptions
+# String Algorithm Descriptions
 
 ## [Checking if the Word is a Palindrome ](https://github.com/1G4S/Algorithms/blob/a885265cb32dbae92b3ab98c5026caba7abd1b7f/src/main/java/com/app/algorithms/string_algorithms/StringAlgorithms.java#L33)
 
