@@ -1,11 +1,11 @@
 # Algorithms 
 ### Algorithm is sequence of some activities necessary to perform specified tasks. It's a course of action that should lead us to solution of problem.
 Here are some implemented algorithms by myself in Java: 
-1. [Fibonacci sequence](https://github.com/1G4S/Algorithms/tree/a885265cb32dbae92b3ab98c5026caba7abd1b7f/src/main/java/com/app/algorithms/number_algorithms) 
-2. [Sieve of Eratosthenes](https://github.com/1G4S/Algorithms/tree/a885265cb32dbae92b3ab98c5026caba7abd1b7f/src/main/java/com/app/algorithms/number_algorithms) 
-3. [Checking if the word is palindrome](https://github.com/1G4S/Algorithms/tree/a885265cb32dbae92b3ab98c5026caba7abd1b7f/src/main/java/com/app/algorithms/string_algorithms) 
-4. [Checking if the word is anagram](https://github.com/1G4S/Algorithms/tree/a885265cb32dbae92b3ab98c5026caba7abd1b7f/src/main/java/com/app/algorithms/string_algorithms) 
-5. [Caesar cipher](https://github.com/1G4S/Algorithms/tree/a885265cb32dbae92b3ab98c5026caba7abd1b7f/src/main/java/com/app/cipher) 
+1. [Fibonacci sequence](https://github.com/1G4S/Algorithms/blob/a0be009d0b42277e95247375bb20c5758f308033/src/main/java/com/app/algorithms/number_algorithms/README.md) 
+2. [Sieve of Eratosthenes](https://github.com/1G4S/Algorithms/blob/a0be009d0b42277e95247375bb20c5758f308033/src/main/java/com/app/algorithms/number_algorithms/README.md) 
+3. [Checking if the word is palindrome](https://github.com/1G4S/Algorithms/blob/a0be009d0b42277e95247375bb20c5758f308033/src/main/java/com/app/algorithms/string_algorithms/README.md) 
+4. [Checking if the word is anagram](https://github.com/1G4S/Algorithms/blob/a0be009d0b42277e95247375bb20c5758f308033/src/main/java/com/app/algorithms/string_algorithms/README.md) 
+5. [Caesar cipher](src/main/java/com/app/cipher) 
 
 [//]: # (# Algorithm Descriptions)
 
