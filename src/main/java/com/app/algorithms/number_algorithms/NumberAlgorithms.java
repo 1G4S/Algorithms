@@ -1,6 +1,7 @@
 package com.app.algorithms.number_algorithms;
 
 public interface NumberAlgorithms {
+
     /**
      * Generates and prints Fibonacci sequence numbers up to the nth number iteratively.
      * This method uses an iterative approach to calculate the Fibonacci sequence, which is more
@@ -24,6 +25,7 @@ public interface NumberAlgorithms {
             a = b - a;
         }
     }
+
     /**
      * Calculates the nth Fibonacci number recursively.
      * This method uses a recursive approach to calculate the nth Fibonacci number.
