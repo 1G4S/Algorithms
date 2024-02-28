@@ -8,7 +8,7 @@ public interface StringAlgorithms {
      * Two strings are considered anagrams if they contain the same characters in any order.
      * The comparison is case-insensitive.
      *
-     * @param firstWord The first string to be compared.
+     * @param firstWord  The first string to be compared.
      * @param secondWord The second string to be compared.
      * @return true if the two strings are anagrams, false otherwise.
      */
@@ -20,8 +20,9 @@ public interface StringAlgorithms {
         var secondChars = secondWord.toLowerCase().toCharArray();
         Arrays.sort(firstChars);
         Arrays.sort(secondChars);
-        return String.valueOf(firstChars).equals(String.valueOf(secondChars));
+        return Arrays.equals(firstChars, secondChars);
     }
+
     /**
      * Checks if the given string is a palindrome.
      * A string is considered a palindrome if it reads the same forward and backward,
@@ -32,7 +33,6 @@ public interface StringAlgorithms {
      */
     static boolean isPalindrome(String word) {
         var stringBuilder = new StringBuilder();
-        stringBuilder.append(word.toLowerCase()).reverse();
-        return stringBuilder.toString().equals(word.toLowerCase());
+        return stringBuilder.append(word.toLowerCase()).reverse().toString().equals(word.toLowerCase());
     }
 }
