@@ -1,11 +1,13 @@
 # Algorithms 
 ### Algorithm is sequence of some activities necessary to perform specified tasks. It's a course of action that should lead us to solution of problem.
 Here are some implemented algorithms by myself in Java: 
-1. [Fibonacci sequence](src/main/java/com/app/algorithms/number_algorithms) 
-2. [Sieve of Eratosthenes](src/main/java/com/app/algorithms/number_algorithms) 
+1. [Fibonacci sequence]() 
+2. [Sieve of Eratosthenes]() 
 3. [Checking if the word is palindrome](src/main/java/com/app/algorithms/string_algorithms) 
 4. [Checking if the word is anagram](src/main/java/com/app/algorithms/string_algorithms) 
 5. [Caesar cipher](src/main/java/com/app/cipher) 
+6. [Prime Number Check]()
+7. [Perfect Number Check]()
 
 [//]: # (# Algorithm Descriptions)
 

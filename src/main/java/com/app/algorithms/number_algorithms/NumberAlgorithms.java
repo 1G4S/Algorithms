@@ -45,4 +45,58 @@ public interface NumberAlgorithms {
         }
         return fibonacciRecursively(n - 2) + fibonacciRecursively(n - 1);
     }
+
+    /**
+     * Checks if a number is prime.
+     * This method determines whether a given number is prime. A prime number is a number greater than 1
+     * that has no positive divisors other than 1 and itself. The function starts checking from 2 up to the square root
+     * of the number, which optimizes the process by reducing the number of checks needed.
+     * <p>
+     * If the number is less than 2, it is automatically not prime. For any number 2 or greater, the function
+     * iteratively checks for any divisor. If a divisor is found, the number is not prime, and the function
+     * returns false. If no divisors are found, the number is prime, and the function returns true.
+     *
+     * @param number The number to be checked for primality.
+     * @return true if the number is prime; false otherwise.
+     */
+    static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Determines if a given number is a perfect number.
+     * A perfect number is a positive integer that is equal to the sum of its proper positive divisors,
+     * excluding itself. For example, 6 is a perfect number because its divisors are 1, 2, and 3, and
+     * 1 + 2 + 3 = 6. This method efficiently calculates the sum of all divisors of the input number by
+     * iterating only up to its square root and adjusting for perfect squares when necessary.
+     *
+     * The algorithm works by initializing a sum variable with 1 (considering 1 as a proper divisor of all
+     * numbers) and iterating through 2 to the square root of the number. For each divisor found, it adds both
+     * the divisor and its complement with respect to the number (i.e., number / divisor) to the sum. If the
+     * number is a perfect square, the square root is subtracted from the sum to correct the earlier addition,
+     * as it would have been added twice.
+     *
+     * @param number The number to check for perfection. It must be a positive integer.
+     * @return true if the number is a perfect number, false otherwise.
+     */
+
+    static boolean isPerfect(int number) {
+        var s = 1;
+        var p = Math.sqrt(number);
+        for (int i = 2; i <= p; i++) {
+            if (number % i == 0) {
+                s += i + number / i;
+            }
+        }
+        if (number == p * p) s -= (int) p;
+        return number == s;
+    }
 }
