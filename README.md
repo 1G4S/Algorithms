@@ -11,6 +11,7 @@ Algorithm is sequence of some activities necessary to perform specified tasks. I
   * Checking if the word is palindrome
   * Checking if the word is anagram
   * Hamming Distance between two strings
+  * Levenshtein Distance
 * **[Cryptography](src/main/java/com/app/cipher)**
   * Caesar cipher
 
