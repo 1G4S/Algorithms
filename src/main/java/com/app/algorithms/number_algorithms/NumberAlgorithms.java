@@ -47,24 +47,40 @@ public interface NumberAlgorithms {
     }
 
     /**
-     * Checks if a number is prime.
-     * This method determines whether a given number is prime. A prime number is a number greater than 1
-     * that has no positive divisors other than 1 and itself. The function starts checking from 2 up to the square root
-     * of the number, which optimizes the process by reducing the number of checks needed.
+     * Determines if a given number is prime.
+     * A prime number is a natural number greater than 1 that cannot be formed by multiplying two smaller natural numbers.
+     * In other words, it has exactly two distinct natural number divisors: 1 and itself. This method checks for primality
+     * using efficient checks and optimizations. First, it handles edge cases (numbers less than 2, and 2 and 3 themselves).
+     * Then, it eliminates numbers divisible by 2 and 3. For larger numbers, it iterates over potential factors from 5
+     * up to the square root of the number, in steps of 6 (i.e., checks i and i+2 within each loop), to quickly identify
+     * divisibility by any smaller prime number.
      * <p>
-     * If the number is less than 2, it is automatically not prime. For any number 2 or greater, the function
-     * iteratively checks for any divisor. If a divisor is found, the number is not prime, and the function
-     * returns false. If no divisors are found, the number is prime, and the function returns true.
+     * The algorithm initially checks if the number is less than 2 (not prime), or is 2 or 3 (prime). Then, it checks
+     * for divisibility by 2 or 3 to quickly eliminate multiples of these. For numbers greater than 3 that are not divisible
+     * by 2 or 3, it proceeds to check potential factors starting from 5, incrementing by 6 each time (since all primes
+     * greater than 3 are of the form 6k ± 1). If the number is divisible by any of these or the immediate next number
+     * (i.e., i+2), it is not prime. If no divisors are found by the time the loop reaches the square root of the number,
+     * the number is prime.
      *
-     * @param number The number to be checked for primality.
-     * @return true if the number is prime; false otherwise.
+     * @param number The number to check for primality. It must be a natural number.
+     * @return true if the number is prime, false otherwise.
      */
+
     static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         }
-        for (int i = 2; i * i <= number; i++) {
-            if (number % i == 0) {
+
+        if (number == 2 || number == 3) {
+            return true;
+        }
+
+        if (number % 2 == 0 || number % 3 == 0) {
+            return false;
+        }
+
+        for (int i = 5; i * i <= number; i += 6) {
+            if (number % i == 0 || number % (i + 2) == 0) {
                 return false;
             }
         }
@@ -77,7 +93,7 @@ public interface NumberAlgorithms {
      * excluding itself. For example, 6 is a perfect number because its divisors are 1, 2, and 3, and
      * 1 + 2 + 3 = 6. This method efficiently calculates the sum of all divisors of the input number by
      * iterating only up to its square root and adjusting for perfect squares when necessary.
-     *
+     * <p>
      * The algorithm works by initializing a sum variable with 1 (considering 1 as a proper divisor of all
      * numbers) and iterating through 2 to the square root of the number. For each divisor found, it adds both
      * the divisor and its complement with respect to the number (i.e., number / divisor) to the sum. If the
@@ -89,14 +105,44 @@ public interface NumberAlgorithms {
      */
 
     static boolean isPerfect(int number) {
-        var s = 1;
-        var p = Math.sqrt(number);
-        for (int i = 2; i <= p; i++) {
+        if (number < 1) {
+            return false;
+        }
+
+        int sum = 1;
+        for (int i = 2; i * i <= number; i++) {
             if (number % i == 0) {
-                s += i + number / i;
+                sum += i;
+                if (i != number / i) {
+                    sum += number / i;
+                }
             }
         }
-        if (number == p * p) s -= (int) p;
-        return number == s;
+
+        return sum == number;
     }
+
+    /**
+     * Calculates the sum of the digits of a given number.
+     * This method takes an integer value as input and computes the sum of its digits.
+     * The computation is performed on the absolute value of the input number to ensure
+     * that the method works correctly for both positive and negative numbers.
+     * <p>
+     * The algorithm iterates over each digit of the number by repeatedly dividing the number by 10
+     * and adding the remainder to the sum. This process continues until the number is reduced to 0.
+     *
+     * @param n The input number whose digits are to be summed.
+     * @return The sum of the digits of the input number.
+     */
+
+    static int sumDigits(int n) {
+        var s = 0;
+        var nn = Math.abs(n);
+        while (nn > 0) {
+            s += nn % 10;
+            nn /= 10;
+        }
+        return s;
+    }
+
 }
